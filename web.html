@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Website - All in One</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            background: #222;
+            padding: 15px 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00eaff;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 100px 60px;
+            min-height: 100vh;
+        }
+
+        /* HOME SECTION */
+        #home {
+            background: url('https://images.unsplash.com/photo-1503264116251-35a269479413')
+                        center/cover no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #home h1 {
+            font-size: 60px;
+        }
+
+        #home p {
+            font-size: 22px;
+            max-width: 600px;
+            margin-top: 15px;
+        }
+
+        /* ABOUT SECTION */
+        #about h2, #gallery h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            max-width: 900px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* GALLERY */
+        .certificate-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+            gap: 0.5empx;
+        }
+
+        .certificate-container img {
+            width: 100%;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .certificate-container img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <div class="logo">My Website</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#Certificate">Certificate</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home">
+        <h1>Welcome to My Website</h1>
+        <p>this my first webpage done me in interships</p>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            My name is Stanley Kevin, and I am pursuing my Bachelor of Engineering
+             in Computer Science and Engineering (BE CSE) at Sri Eshwar College of Engineering
+             . I am passionate about technology, programming, and developing innovative solutions
+              that solve real-world problems. With a strong interest in software development and
+               modern technologies, I continuously explore new tools and concepts to enhance my 
+               skills. I am dedicated, hardworking, and eager to grow both personally and professionally 
+               in the field of computer science.
+            </p>
+    </section>
+
+    <!-- certificate SECTION -->
+    <section id="certificate">
+        <h2>My certificate</h2>
+
+        <div class="certificate-container">
+            <img src="C:\Users\aroki\Desktop\MERN HTML\Screenshot 2024-12-20 184848.png">
+            <img src="C:\Users\aroki\Desktop\MERN HTML\Screenshot 2024-12-21 192000.png">
+            <img src="C:\Users\aroki\Desktop\MERN HTML\Screenshot 2025-08-05 194530.png">
+            
+        </div>
+    </section>
+
+    <script>
+        console.log("All-in-one website loaded successfully!");
+    </script>
+<label for="Name">Name</label><br>
+<input type="text" id="na" name="nmae">
+</br>
+
+</body>
+</html>
