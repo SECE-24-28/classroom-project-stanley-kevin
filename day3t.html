@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AptitudeGuru — Demo Clone</title>
+  <meta name="description" content="A lightweight, responsive clone of aptitude learning site (demo)">
+  <style>
+    
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.45;color:#222;background:linear-gradient(180deg,#f6f8ff 0%,#ffffff 40%)}
+
+    .container{max-width:1140px;margin:0 auto;padding:24px}
+
+   
+    header{background:linear-gradient(90deg,#304FFE,#4FC3F7);color:#fff;padding:18px 0;border-radius:12px}
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:8px;background:white;color:#304FFE;display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav ul{display:flex;gap:16px;list-style:none}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600}
+    .cta{background:#fff;color:#304FFE;padding:8px 14px;border-radius:8px;font-weight:700}
+
+    .hamburger{display:none;border:0;background:transparent;color:#fff;font-size:22px}
+
+    
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:40px 0}
+    .hero h1{font-size:34px;color:#0f172a;margin-bottom:12px}
+    .hero p{color:#334155;margin-bottom:18px}
+    .searchcard{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.08)}
+    .searchbar{display:flex;gap:10px}
+    .searchbar input{flex:1;padding:10px 12px;border:1px solid #e6eef8;border-radius:8px}
+    .searchbar button{padding:10px 14px;border-radius:8px;border:0;background:#304FFE;color:#fff;font-weight:700}
+    .features{display:flex;gap:10px;margin-top:12px}
+    .feature{background:#f1f8ff;padding:10px;border-radius:8px;font-weight:600;color:#1e3a8a}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+    .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    .card h3{margin-bottom:8px}
+    .meta{font-size:13px;color:#64748b;margin-bottom:10px}
+    .card p{font-size:14px;color:#334155}
+    .btn{display:inline-block;margin-top:12px;padding:8px 12px;border-radius:8px;border:0;background:#304FFE;color:#fff;font-weight:700;text-decoration:none}
+
+  
+    .two-col{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:34px}
+    .blog-list{display:flex;flex-direction:column;gap:14px}
+    .post{display:flex;gap:12px;align-items:flex-start}
+    .post .img{width:110px;height:70px;border-radius:8px;background:#e6eef8}
+    .post h4{font-size:16px}
+    .sidebar{background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 20px rgba(16,24,40,0.04)}
+
+   
+    footer{margin-top:36px;padding:18px 12px;color:#475569}
+    .foot-row{display:flex;justify-content:space-between;gap:18px;align-items:center}
+
+   
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .two-col{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      nav ul{display:none}
+      .hamburger{display:block}
+      .cards{grid-template-columns:1fr}
+      .logo{width:40px;height:40px}
+      .hero h1{font-size:26px}
+    }
+
+    
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;font-weight:700;background:#eff6ff;color:#1e3a8a;font-size:12px}
+    .grid-sm{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">AG</div>
+          <div>
+            <div style="font-weight:800">AptitudeGuru</div>
+            <div style="font-size:12px;opacity:.9">Practice • Learn • Improve</div>
+          </div>
+        </div>
+
+        <nav>
+          <button class="hamburger" aria-label="Open menu">☰</button>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a class="cta" href="#">Take Test</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="hero" style="margin-top:18px">
+        <div>
+          <h1>Master Aptitude & Logical Reasoning — Fast.</h1>
+          <p>Practice questions, full-length mock tests, topic-wise lessons and step-by-step solutions to boost your placement preparation.</p>
+
+          <div class="searchcard">
+            <div class="searchbar">
+              <input id="q" placeholder="Search topics, e.g. percentage, time & work, probability...">
+              <button id="searchBtn">Search</button>
+            </div>
+            <div class="features">
+              <div class="feature">Topic-wise tests</div>
+              <div class="feature">Detailed solutions</div>
+              <div class="feature">Timed mocks</div>
+            </div>
+          </div>
+
+          <div class="grid-sm" style="margin-top:14px">
+            <div class="card" style="display:flex;gap:12px;align-items:center">
+              <img src="C:\Users\aroki\Desktop\MERN HTML\web 2.png" style="width:72px;height:72px;border-radius:10px;object-fit:cover;">
+              <div>
+                <div style="font-weight:800">1000+ Questions</div>
+                <div style="font-size:13px;color:#64748b">Topic-wise & updated</div>
+              </div>
+            </div>
+            <div class="card" style="display:flex;gap:12px;align-items:center">
+              <img src="C:\Users\aroki\Desktop\MERN HTML\web 1.png" style="width:72px;height:72px;border-radius:10px;object-fit:cover;">
+              <div>
+                <div style="font-weight:800">Performance Reports</div>
+                <div style="font-size:13px;color:#64748b">Track your progress</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <div class="searchcard" style="text-align:center">
+            <div style="font-weight:800;margin-bottom:10px">Featured Mock Test</div>
+            <div style="height:220px;border-radius:10px;">
+              <img src="C:\Users\aroki\Desktop\MERN HTML\web 3.png" style="width:51%;height:220px;border-radius:3px;object-fit:cover;"></div>
+            <a href="#" class="btn" style="width:100%;display:block;text-align:center;margin-top:12px">Start Now</a>
+          </div>
+
+          <div style="margin-top:14px;display:flex;gap:10px">
+            <div class="card" style="flex:1;text-align:center">
+              <div style="font-weight:800">Live Classes</div>
+              <div style="font-size:13px;color:#64748b">Weekly sessions</div>
+            </div>
+            <div class="card" style="flex:1;text-align:center">
+              <div style="font-weight:800">Interview Qs</div>
+              <div style="font-size:13px;color:#64748b">Company-wise</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses grid -->
+      <section id="courses">
+        <h2 style="margin-top:8px;margin-bottom:10px">Popular Topics</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="tag">Quant</div>
+            <h3>Time & Work</h3>
+            <div class="meta">25 Questions • Basic → Advanced</div>
+            <p>Solve classic time & work problems with shortcut techniques and detailed solutions.</p>
+            <a class="btn" href="#">Practice</a>
+          </article>
+
+          <article class="card">
+            <div class="tag">DI</div>
+            <h3>Data Interpretation</h3>
+            <div class="meta">Charts • Tables • Caselets</div>
+            <p>Improve speed and accuracy for company-specific DI sections.</p>
+            <a class="btn" href="#">Practice</a>
+          </article>
+
+          <article class="card">
+            <div class="tag">LR</div>
+            <h3>Logical Reasoning</h3>
+            <div class="meta">Puzzles • Series • Syllogisms</div>
+            <p>Step-by-step strategies to crack puzzles and reasoning sets.</p>
+            <a class="btn" href="#">Practice</a>
+          </article>
+
+          <article class="card">
+            <div class="tag">Verbal</div>
+            <h3>Reading Comprehension</h3>
+            <div class="meta">Passages • Summaries</div>
+            <p>Shortcuts for faster reading and effective answer elimination.</p>
+            <a class="btn" href="#">Practice</a>
+          </article>
+
+          <article class="card">
+            <div class="tag">Quant</div>
+            <h3>Probability & Permutation</h3>
+            <div class="meta">Concepts • Tricks</div>
+            <p>Clear conceptual notes and practice sets to boost accuracy.</p>
+            <a class="btn" href="#">Practice</a>
+          </article>
+
+          <article class="card">
+            <div class="tag">Mock</div>
+            <h3>Full-Length Mocks</h3>
+            <div class="meta">Simulate test environment</div>
+            <p>Timed tests with instant scoring and solution walkthroughs.</p>
+            <a class="btn" href="#">Take Mock</a>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <div class="foot-row">
+          <div>© AptitudeGuru — Demo. Built with ❤️ by Stanley.</div>
+          <div style="font-size:13px;color:#94a3b8">Made for practice & learning • Not affiliated with original site</div>
+        </div>
+      </footer>
+
+    </div>
+  </header>
+
+  <script>
+   
+    document.getElementById('searchBtn').addEventListener('click',function(e){
+      const q = document.getElementById('q').value.trim();
+      if(!q){ alert('Type a topic to search (example: percentage)'); return }
+      alert('You searched for: "' + q + '"\n(This is demo behaviour. Hook this to your search/api.)')
+    });
+
+    
+    const ham = document.querySelector('.hamburger');
+    const navUl = document.querySelector('nav ul');
+    ham.addEventListener('click', ()=>{
+      if(navUl.style.display === 'flex') navUl.style.display = 'none'; else navUl.style.display = 'flex';
+      navUl.style.flexDirection = 'column';
+      navUl.style.background = 'transparent';
+      navUl.style.position = 'absolute';
+      navUl.style.right = '24px';
+      navUl.style.top = '70px';
+      navUl.style.padding = '12px';
+      navUl.style.borderRadius = '10px';
+      navUl.style.boxShadow = '0 8px 30px rgba(16,24,40,0.12)';
+    });
+
+   
+    document.addEventListener('click', (e)=>{
+      if(!e.target.closest('nav') && window.innerWidth <= 640){
+        navUl.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
