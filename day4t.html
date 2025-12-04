@@ -1,0 +1,309 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Change Text Example</title>
+</head>
+<body>
+
+    <h2 id="text">Kevin</h2>
+
+    <button onclick="press()">Click Me</button>
+
+    <script>
+        function press() {
+            let element = document.getElementById("text");
+            let fullText = "Kevin is good boy";
+            let index = 0;
+
+            element.innerHTML = ""; // 
+            element.style.color = "red"; 
+
+            
+            let typing = setInterval(() => {
+                element.innerHTML += fullText[index];
+                index++;
+
+                if (index === fullText.length) {
+                    clearInterval(typing);
+                }
+            }, 100); 
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Add Items Example</title>
+</head>
+<body>
+
+    <input type="text" id="inputText" placeholder="Enter the string">
+    <button onclick="addItem()">Add</button>
+
+    <ol id="list"></ol>
+
+    <script>
+        function addItem() {
+            let text = document.getElementById("inputText").value;
+
+            if (text.trim() === "") {
+                alert("Please enter something!");
+                return;
+            }
+
+            let li = document.createElement("li");
+            li.textContent = text;
+
+            document.getElementById("list").appendChild(li);
+
+            document.getElementById("inputText").value = ""; // clear box
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Login Form</h2>
+
+    <input type="text" id="email" placeholder="Enter the email"><br><br>
+    <input type="password" id="password" placeholder="Enter the password"><br><br>
+
+    <button onclick="submitForm()">Submit</button>
+
+    <p id="message"></p>
+
+    <script>
+        function submitForm() {
+            let email = document.getElementById("email");
+            let password = document.getElementById("password");
+            let message = document.getElementById("message");
+
+            // remove previous red borders
+            email.classList.remove("error");
+            password.classList.remove("error");
+
+            if (email.value.trim() === "" || password.value.trim() === "") {
+
+                if (email.value.trim() === "") {
+                    email.classList.add("error");
+                }
+
+                if (password.value.trim() === "") {
+                    password.classList.add("error");
+                }
+
+                message.style.color = "red";
+                message.innerHTML = "Please fill all fields!";
+            } 
+            else {
+                message.style.color = "green";
+                message.innerHTML = "Submitted Successfully!";
+            }
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Lock</title>
+</head>
+<body>
+<h1>Digital Clock</h1>
+    <h1 id="clock">00:00:00</h1>
+
+    <script>
+        function showTime() {
+            let d = new Date();
+
+            let h = d.getHours();
+            let m = d.getMinutes();
+            let s = d.getSeconds();
+
+            if (h < 10) h = "0" + h;
+            if (m < 10) m = "0" + m;
+            if (s < 10) s = "0" + s;
+
+            document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+        }
+        setInterval(showTime, 1000);
+        showTime();
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Dark Mode Switch</title>
+</head>
+<body id="body">
+
+    <h2>Light / Dark Mode Switch</h2>
+
+    <button onclick="switchMode()">Switch Mode</button>
+
+    <script>
+        let dark = false;
+
+        function switchMode() {
+            let b = document.getElementById("body");
+
+            if (dark === false) {
+
+                b.style.background = "black";
+                b.style.color = "white";
+                dark = true;
+            } else {
+      
+                b.style.background = "white";
+                b.style.color = "black";
+                dark = false;
+            }
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Add Items Example</title>
+</head>
+<body>
+
+    <h2>To do list</h2>
+
+    <input type="text" id="inputText" placeholder="Enter the string">
+    <button onclick="addItem()">Add</button>
+
+    <ol id="list"></ol>
+
+    <script>
+        function addItem() {
+            let text = document.getElementById("inputText").value;
+
+            if (text.trim() === "") {
+                alert("Please enter something!");
+                return;
+            }
+
+           
+            let li = document.createElement("li");
+
+          
+            let span = document.createElement("span");
+            span.textContent = text + " ";
+
+          
+            let delBtn = document.createElement("button");
+            delBtn.textContent = "Delete";
+
+           
+            delBtn.onclick = function () {
+                li.remove();
+            };
+
+            li.appendChild(span);
+            li.appendChild(delBtn);
+
+            document.getElementById("list").appendChild(li);
+
+            document.getElementById("inputText").value = "";
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+        }
+        button {
+            padding: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo App</h1>
+    <input type="text" id="taskInput" placeholder="Add a new task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            const taskText = input.value.trim();
+            if (taskText === '') return;
+
+            const taskList = document.getElementById('taskList');
+            const li = document.createElement('li');
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.onclick = () => li.classList.toggle('completed');
+
+            const span = document.createElement('span');
+            span.textContent = taskText;
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.onclick = () => taskList.removeChild(li);
+
+            li.appendChild(checkbox);
+            li.appendChild(span);
+            li.appendChild(deleteBtn);
+            taskList.appendChild(li);
+
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
