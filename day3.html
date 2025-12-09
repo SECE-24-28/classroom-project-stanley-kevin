@@ -1,0 +1,644 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports Bike Website</title> -->
+<!-- <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+        background:#000;
+        color:#fff;
+        overflow-x:hidden;
+    }
+
+    /* Background Video */
+    .video-bg{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        z-index:-1;
+        filter:brightness(0.55);
+    }
+
+    /* Header */
+    header{
+        width:100%;
+        padding:20px 40px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:10;
+        backdrop-filter: blur(6px);
+    }
+
+    header h2{
+        font-size:28px;
+        letter-spacing:2px;
+    }
+
+    nav a{
+        margin-left:20px;
+        text-decoration:none;
+        color:#fff;
+        font-weight:bold;
+        transition:0.3s;
+    }
+
+    nav a:hover{
+        color:#ff3b3b;
+    }
+
+    /* Hero Section */
+    .hero{
+        width:100%;
+        height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        padding:0 20px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h1{
+        font-size:55px;
+        text-shadow:0 0 15px rgba(255,255,255,0.4);
+        animation: float 4s infinite ease-in-out;
+    }
+
+    .hero p{
+        margin-top:15px;
+        font-size:20px;
+        opacity:0.85;
+        animation: fadeUp 2s ease-in-out;
+    }
+
+    .btn{
+        margin-top:25px;
+        padding:12px 25px;
+        border-radius:30px;
+        border:2px solid #ff3b3b;
+        background:transparent;
+        color:#fff;
+        font-size:18px;
+        cursor:pointer;
+        transition:0.4s;
+        text-decoration:none;
+        display:inline-block;
+        animation: fadeUp 3s ease-in-out;
+    }
+
+    .btn:hover{
+        background:#ff3b3b;
+        box-shadow:0 0 20px #ff3b3b;
+    }
+
+    @keyframes float{
+        0%{ transform:translateY(0); }
+        50%{ transform:translateY(-10px); }
+        100%{ transform:translateY(0); }
+    }
+
+    @keyframes fadeIn{
+        from{ opacity:0; }
+        to{ opacity:1; }
+    }
+
+    @keyframes fadeUp{
+        from{ opacity:0; transform:translateY(20px); }
+        to{ opacity:1; transform:translateY(0); }
+    }
+
+    /* About Section */
+    .about{
+        padding:80px 40px;
+        background:rgba(0,0,0,0.6);
+        backdrop-filter: blur(5px);
+    }
+
+    .about h2{
+        font-size:35px;
+        margin-bottom:10px;
+    }
+
+    .about p{
+        max-width:600px;
+        line-height:1.6;
+        opacity:0.9;
+    }
+
+    /* Gallery Section */
+    .gallery{
+        padding:80px 40px;
+        text-align:center;
+        background:rgba(0,0,0,0.65);
+        backdrop-filter:blur(4px);
+    }
+
+    .gallery h2{
+        font-size:35px;
+        margin-bottom:30px;
+    }
+
+    .gallery-box{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    .gallery-box img{
+        width:300px;
+        height:200px;
+        object-fit:cover;
+        border-radius:10px;
+        transition:0.4s;
+        border:2px solid #ff3b3b;
+    }
+
+    .gallery-box img:hover{
+        transform:scale(1.05);
+        box-shadow:0 0 20px #ff3b3b;
+    }
+
+    /* Contact Section */
+    .contact{
+        padding:80px 40px;
+        background:rgba(0,0,0,0.75);
+        backdrop-filter:blur(5px);
+    }
+
+    .contact h2{
+        font-size:35px;
+        margin-bottom:15px;
+    }
+
+    .contact p{
+        margin:8px 0;
+        font-size:18px;
+        opacity:0.9;
+    }
+</style>
+</head>
+<body>
+
+<!-- Background Video
+<video class="video-bg" autoplay muted loop>
+    
+    <source src="C:\Users\aroki\Desktop\MERN HTML\107030928641790402.mp4" type="video/mp4">
+</video>
+
+<header>
+    <h2>SPORTS RIDE</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h1>Unleash The Beast</h1>
+        <p>Experience the ultimate power and performance of a true sports bike.</p>
+        <a href="#about" class="btn">Explore More</a>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>About Our Bike</h2>
+    <p>
+        A sports bike built for thrill seekers. High speed, aggressive styling, precision control and
+        aerodynamic performance — engineered to dominate every road.
+    </p>
+</section>
+
+<section class="gallery" id="gallery">
+    <h2>Gallery</h2>
+
+    <div class="gallery-box">
+       
+        <img src="C:\Users\aroki\Desktop\MERN HTML\300826450140499775.jpg" alt="BMW SX6">
+        <img src="c:\Users\aroki\Downloads\14918242508405628.jpg" alt="KTM XL45">
+        <img src="C:\Users\aroki\Desktop\MERN HTML\19703317114615380.jpg" alt="HERO RV4">
+
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>📍 Address:</strong> 123 Sports Ride Street, Racing City</p>
+    <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+    <p><strong>📧 Email:</strong> support@sportsride.com</p>
+    <p><strong>⏱ Hours:</strong> Mon-Sat: 9 AM - 7 PM</p>
+</section>
+
+</body>
+</html> --> 
+
+
+<!-- javaScript Example -->
+
+<!-- 
+<h1>BASIC CALCULATER</h1>
+<table></table>
+<script>
+    function calc(op) {
+
+        let a = parseInt(document.getElementById("num1").value);
+        let b = parseInt(document.getElementById("num2").value);
+        let result;
+
+        if(op === '+'){
+            result = a + b;
+        }
+        else if(op === '-'){
+            result = a - b;
+        }
+        else if(op === '*'){
+            result = a * b;
+        }
+        else if(op === '/'){
+            result = a / b;
+        }
+
+        document.getElementById("result").value = result;
+    }
+</script>
+
+</head>
+<body>
+<ol>
+<input type="text" id="num1" placeholder="Enter number 1">
+</ol>
+<ol> <input type="text" id="num2" placeholder="Enter number 2"></ol>
+<ol><input type="text" id="result" placeholder="Result"></ol>
+
+    <br><br>
+
+    <button onclick="calc('+')">Add</button>
+    <button onclick="calc('-')">Sub</button>
+    <button onclick="calc('*')">Multiply</button>
+    <button onclick="calc('/')">Divide</button>
+</table> -->
+<!-- </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Change + Preview (Same Place)</title>
+</head>
+<body>
+
+<h2>Image Change</h2>
+
+
+<img id="mainImage" src="bmw_m4_.jpg" width="400">
+
+<br><br>
+
+
+<button onclick="changeImage()">Click Me </button>
+<button onclick="previewImage()">Preview </button>
+
+<script>
+    let img1 = "bmw_m4_.jpg";
+    let img2 = "19703317114615380.jpg";
+
+    let currentImage = img1;      
+    let previousImage = img1;     
+
+    function changeImage() {
+        previousImage = currentImage; 
+
+        if (currentImage === img1) {
+            currentImage = img2;
+        } else {
+            currentImage = img1;
+        }
+
+        document.getElementById("mainImage").src = currentImage;
+    }
+
+    function previewImage() {
+        
+        document.getElementById("mainImage").src = previousImage;
+    }
+</script>
+
+</body>
+</html> -->
+ 
+
+
+ <!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AptitudeGuru — Demo Clone</title>
+  <meta name="description" content="A lightweight, responsive clone of aptitude learning site (demo)">
+  <style>
+    /* ====== Reset ====== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.45;color:#222;background:linear-gradient(180deg,#f6f8ff 0%,#ffffff 40%)}
+
+    /* ====== Container ====== */
+    .container{max-width:1140px;margin:0 auto;padding:24px}
+
+    /* ====== Header ====== */
+    header{background:linear-gradient(90deg,#304FFE,#4FC3F7);color:#fff;padding:18px 0;border-radius:12px}
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:8px;background:white;color:#304FFE;display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav ul{display:flex;gap:16px;list-style:none}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600}
+    .cta{background:#fff;color:#304FFE;padding:8px 14px;border-radius:8px;font-weight:700}
+
+    /* ====== Mobile nav ====== */
+    .hamburger{display:none;border:0;background:transparent;color:#fff;font-size:22px}
+
+    /* ====== Hero ====== */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:40px 0}
+    .hero h1{font-size:34px;color:#0f172a;margin-bottom:12px}
+    .hero p{color:#334155;margin-bottom:18px}
+    .searchcard{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.08)}
+    .searchbar{display:flex;gap:10px}
+    .searchbar input{flex:1;padding:10px 12px;border:1px solid #e6eef8;border-radius:8px}
+    .searchbar button{padding:10px 14px;border-radius:8px;border:0;background:#304FFE;color:#fff;font-weight:700}
+    .features{display:flex;gap:10px;margin-top:12px}
+    .feature{background:#f1f8ff;padding:10px;border-radius:8px;font-weight:600;color:#1e3a8a}
+
+    /* ====== Cards grid ====== */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+    .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    .card h3{margin-bottom:8px}
+    .meta{font-size:13px;color:#64748b;margin-bottom:10px}
+    .card p{font-size:14px;color:#334155}
+    .btn{display:inline-block;margin-top:12px;padding:8px 12px;border-radius:8px;border:0;background:#304FFE;color:#fff;font-weight:700;text-decoration:none}
+
+    /* ====== Two-column section ====== */
+    .two-col{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:34px}
+    .blog-list{display:flex;flex-direction:column;gap:14px}
+    .post{display:flex;gap:12px;align-items:flex-start}
+    .post .img{width:110px;height:70px;border-radius:8px;background:#e6eef8}
+    .post h4{font-size:16px}
+    .sidebar{background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 20px rgba(16,24,40,0.04)}
+
+    /* ====== Footer ====== */
+    footer{margin-top:36px;padding:18px 12px;color:#475569}
+    .foot-row{display:flex;justify-content:space-between;gap:18px;align-items:center}
+
+    /* ====== Responsive ====== */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .two-col{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      nav ul{display:none}
+      .hamburger{display:block}
+      .cards{grid-template-columns:1fr}
+      .logo{width:40px;height:40px}
+      .hero h1{font-size:26px}
+    }
+
+    /* small niceties */
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;font-weight:700;background:#eff6ff;color:#1e3a8a;font-size:12px}
+    .grid-sm{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">AG</div>
+          <div>
+            <div style="font-weight:800">AptitudeGuru</div>
+            <div style="font-size:12px;opacity:.9">Practice • Learn • Improve</div>
+          </div>
+        </div>
+
+        <nav>
+          <button class="hamburger" aria-label="Open menu">☰</button>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a class="cta" href="#">Take Test</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="hero" style="margin-top:18px">
+        <div>
+          <h1>Master Aptitude & Logical Reasoning — Fast.</h1>
+          <p>Practice questions, full-length mock tests, topic-wise lessons and step-by-step solutions to boost your placement preparation.</p>
+
+          <div class="searchcard">
+            <div class="searchbar">
+              <input id="q" placeholder="Search topics, e.g. percentage, time & work, probability...">
+              <button id="searchBtn">Search</button>
+            </div>
+            <div class="features">
+              <div class="feature">Topic-wise tests</div>
+              <div class="feature">Detailed solutions</div>
+              <div class="feature">Timed mocks</div>
+            </div>
+          </div>
+
+          <div class="grid-sm" style="margin-top:14px">
+            <div class="card" style="display:flex;gap:12px;align-items:center">
+              <div style="width:72px;height:72px;border-radius:10px;background:#e6f2ff;display:flex;align-items:center;justify-content:center;font-weight:800;color:#1e3a8a">100+</div>
+              <div>
+                <div style="font-weight:800">1000+ Questions</div>
+                <div style="font-size:13px;color:#64748b">Topic-wise & updated</div>
+              </div>
+            </div>
+            <div class="card" style="display:flex;gap:12px;align-items:center">
+              <div style="width:72px;height:72px;border-radius:10px;background:#fff4e6;display:flex;align-items:center;justify-content:center;font-weight:800;color:#a04c00">A+</div>
+              <div>
+                <div style="font-weight:800">Performance Reports</div>
+                <div style="font-size:13px;color:#64748b">Track your progress</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <div class="searchcard" style="text-align:center">
+            <div style="font-weight:800;margin-bottom:10px">Featured Mock Test</div>
+            <div style="height:220px;border-radius:10px;background:linear-gradient(180deg,#304FFE,#8FCEFF);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:800">Mock Test Preview</div>
+            <a href="#" class="btn" style="width:100%;display:block;text-align:center;margin-top:12px">Start Now</a>
+          </div>
+
+          <div style="margin-top:14px;display:flex;gap:10px">
+            <div class="card" style="flex:1;text-align:center">
+              <div style="font-weight:800">Live Classes</div>
+              <div style="font-size:13px;color:#64748b">Weekly sessions</div>
+            </div>
+            <div class="card" style="flex:1;text-align:center">
+              <div style="font-weight:800">Interview Qs</div>
+              <div style="font-size:13px;color:#64748b">Company-wise</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses grid -->
+      <!-- <section id="courses">
+        <h2 style="margin-top:8px;margin-bottom:10px">Popular Topics</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="tag">Quant</div>
+            <h3>Time & Work</h3>
+            <div class="meta">25 Questions • Basic → Advanced</div>
+            <p>Solve classic time & work problems with shortcut techniques and detailed solutions.</p>
+            <a class="btn" href="#">Practice</a>
+          </article>
+
+          <article class="card">
+            <div class="tag">DI</div>
+            <h3>Data Interpretation</h3>
+            <div class="meta">Charts • Tables • Caselets</div>
+            <p>Improve speed and accuracy for company-specific DI sections.</p>
+            <a class="btn" href="#">Practice</a>
+          </article>
+
+          <article class="card">
+            <div class="tag">LR</div>
+            <h3>Logical Reasoning</h3>
+            <div class="meta">Puzzles • Series • Syllogisms</div>
+            <p>Step-by-step strategies to crack puzzles and reasoning sets.</p>
+            <a class="btn" href="#">Practice</a>
+          </article>
+
+          <article class="card">
+            <div class="tag">Verbal</div>
+            <h3>Reading Comprehension</h3>
+            <div class="meta">Passages • Summaries</div>
+            <p>Shortcuts for faster reading and effective answer elimination.</p>
+            <a class="btn" href="#">Practice</a>
+          </article>
+
+          <article class="card">
+            <div class="tag">Quant</div>
+            <h3>Probability & Permutation</h3>
+            <div class="meta">Concepts • Tricks</div>
+            <p>Clear conceptual notes and practice sets to boost accuracy.</p>
+            <a class="btn" href="#">Practice</a>
+          </article>
+
+          <article class="card">
+            <div class="tag">Mock</div>
+            <h3>Full-Length Mocks</h3>
+            <div class="meta">Simulate test environment</div>
+            <p>Timed tests with instant scoring and solution walkthroughs.</p>
+            <a class="btn" href="#">Take Mock</a>
+          </article>
+        </div>
+      </section>
+
+      <div class="two-col">
+        <div>
+          <h2 id="blog">Latest Articles</h2>
+          <div class="blog-list">
+            <div class="post">
+              <div class="img"></div>
+              <div>
+                <h4>5 Tricks to Solve Percentage Faster</h4>
+                <div class="meta">Nov 28, 2025 • 6 min read</div>
+              </div>
+            </div>
+
+            <div class="post">
+              <div class="img"></div>
+              <div>
+                <h4>How to approach DI in 20 minutes</h4>
+                <div class="meta">Nov 15, 2025 • 8 min read</div>
+              </div>
+            </div>
+
+            <div class="post">
+              <div class="img"></div>
+              <div>
+                <h4>Top 10 LR puzzles for interviews</h4>
+                <div class="meta">Oct 30, 2025 • 9 min read</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div style="font-weight:800;margin-bottom:8px">Quick Links</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;padding-left:0">
+            <li><a href="#">Topic-wise Tests</a></li>
+            <li><a href="#">Company-wise Questions</a></li>
+            <li><a href="#">Interview Prep</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <footer>
+        <div class="foot-row">
+          <div>© AptitudeGuru — Demo. Built with ❤️ by Stanley.</div>
+          <div style="font-size:13px;color:#94a3b8">Made for practice & learning • Not affiliated with original site</div>
+        </div>
+      </footer>
+
+    </div>
+  </header>
+
+  <script>
+    // Simple JS for search and mobile nav
+    document.getElementById('searchBtn').addEventListener('click',function(e){
+      const q = document.getElementById('q').value.trim();
+      if(!q){ alert('Type a topic to search (example: percentage)'); return }
+      alert('You searched for: "' + q + '"\n(This is demo behaviour. Hook this to your search/api.)')
+    });
+
+    // Mobile nav toggle
+    const ham = document.querySelector('.hamburger');
+    const navUl = document.querySelector('nav ul');
+    ham.addEventListener('click', ()=>{
+      if(navUl.style.display === 'flex') navUl.style.display = 'none'; else navUl.style.display = 'flex';
+      navUl.style.flexDirection = 'column';
+      navUl.style.background = 'transparent';
+      navUl.style.position = 'absolute';
+      navUl.style.right = '24px';
+      navUl.style.top = '70px';
+      navUl.style.padding = '12px';
+      navUl.style.borderRadius = '10px';
+      navUl.style.boxShadow = '0 8px 30px rgba(16,24,40,0.12)';
+    });
+
+    // Accessibility: close menu when clicking outside
+    document.addEventListener('click', (e)=>{
+      if(!e.target.closest('nav') && window.innerWidth <= 640){
+        navUl.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html> --> 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form</title>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form action="success.html" method="GET">
+
+        <!-- Name -->
+        <label>Enter Your Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <!-- Course Selection -->
+        <label>Select Course:</label><br>
+        <select name="course" required>
+            <option value="">-- Choose Course --</option>
+            <option value="C">C</option>
+            <option value="C++">C++</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+        </select><br><br>
+
+        <!-- Gender -->
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male" required> Male<br>
+        <input type="radio" name="gender" value="Female" required> Female<br>
+        <input type="radio" name="gender" value="Other" required> Other<br><br>
+
+        <!-- Submit -->
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+</html>
+
+

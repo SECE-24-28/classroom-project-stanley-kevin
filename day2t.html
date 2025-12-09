@@ -1,0 +1,207 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Box Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .box {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            box-shadow: 
+                0 4px 10px rgba(0,0,0,0.2),
+                0 0 20px rgba(255,255,255,0.5) inset;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 10px 25px rgba(0,0,0,0.3),
+                0 0 30px rgba(255,255,255,0.6) inset;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="color:white; text-align:center;">Responsive 5-Box Layout</h2>
+
+<div class="container">
+    <div class="box">
+        Box 1
+        <p>this is car</p>
+    </div>
+    
+    <div class="box">Box 2
+        <p>this is bike</p>
+    </div>
+    
+    <div class="box">Box 3 
+        <p>this is bus</p>
+    </div>
+    
+    <div class="box">Box 4
+        <p>this is truck</p>
+    </div>
+   
+    <div class="box">Box 5
+        <p>this is aeroplane</p>
+    </div>
+    
+</div>
+
+</body>
+</html> -->
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   .container
+   {
+    background-color: rgb(232, 18, 207);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+    height: 200px;
+    align-items: center;
+    flex-direction: row;
+   }
+   .box{
+    width: 100px;
+    height: 50px;
+    padding: 20px;
+    background-color: rgb(127, 219, 90);
+    color: rgb(4, 18, 9);
+   }
+
+</style>
+<body>
+    <div class="container">
+   <div class="box">item-1
+    <p>this is apple</p>
+   </div>
+   <div class="box">item-2
+    <p>this is banana</p>
+   </div>
+   <div class="box">item-3
+    <p>this is cherry</p>
+   </div>
+   <div class="box">item-4
+    <p>this is dates</p>
+   </div>
+   <div class="box">item-5
+    <p>this is organs</p>
+   </div>
+   </div>
+</body>
+</html>   -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Image + Text</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #c84e58, #c486ba);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .text-box {
+            flex: 1;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+            min-width: 250px;
+        }
+
+        .image-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            min-width: 250px;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transition: transform 0.3s;
+        }
+
+        .image-box img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive: Text moves below image */
+        @media(max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .text-box {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    
+    <!-- TEXT (LEFT SIDE) -->
+    <div class="text-box">
+        The BMW M4 rises like a fire-breathing dragon<br>
+        breathtaking performance and style.
+    </div>
+
+    <!-- IMAGE (RIGHT SIDE) -->
+    <div class="image-box">
+        <img src="C:\Users\aroki\Desktop\MERN HTML\bmw_m4_.jpg">
+    </div>
+
+</div>
+
+</body>
+</html>
