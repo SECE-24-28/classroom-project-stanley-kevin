@@ -1,37 +1,54 @@
-import { axios } from 'axios'
-import { use, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
+import { addCourses, getCourses } from './api/Coursesapi'
 
 function App() {
-  const [Slist, setSlist] = useState([])
+  const [courses, setCourses] = useState([])
+  const [title, setTitle] = useState("")
+  const [duration, setDuration] = useState("")
+
+  const fetchCourse = async () => {
+    const res = await getCourses()
+    setCourses(res.data)
+  }
 
   useEffect(() => {
-    const fetData = async () => {
-      try {
-        const res = await axios.get(BASE_URL)
-        setSlist(res.data)
-      } catch (error) {
-       // console.log(error)
-      }
-    }
-    fetData()
+    fetchCourse()
   }, [])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await addCourses({ title, duration })
+    fetchCourse()
+    setTitle('')
+    setDuration('')
+  }
 
   return (
     <>
-      {Slist.map((stu) => (
-        <div key={stu.id}>
-          <p>{stu.id}</p>
-          <p>{stu.name}</p>
-          <p>{stu.email}</p>
-          <p>{stu.phone}</p>
-          <p>{stu.address}</p>
-          <p>{stu.department}</p>
-          <hr />
-        </div>
-      ))}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Course Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Duration"
+          value={duration}
+          onChange={(e) => setDuration(e.target.value)}
+        />
+        <button type="submit">Add Course</button>
+      </form>
+
+      <ul>
+        {courses.map((course) => (
+          <li key={course._id}>
+            {course.title} - {course.duration}
+          </li>
+        ))}
+      </ul>
     </>
   )
 }
